@@ -9,40 +9,38 @@ Usage
 Install extension. Setup shared key in extension options.  
 Then, create URL: http://example.com/form#$request.$signature  
 where $request is base64 encoded JSON:  
-```	{
-		"form name or form number" => {
-			"field 1 name" => "field 1 value",
-			"field 2 name" => "field 2 value"
-		}, "other form name or number" => {
-			...
-		}
+```{
+	"form name or form number" => {
+		"field 1 name" => "field 1 value",
+		"field 2 name" => "field 2 value"
+	}, "other form name or number" => {
+		...
 	}
-```
+}```
 and $signature is hexdigest HMAC-SHA1 of http://example.com/form#$request, example generating code in :
-```	require 'digest'
-	
-	def signature(messsage, secret)
-		Digest::HMAC.hexdigest(message, secret, Digest::SHA1)
-	end
-```
+```require 'digest'
+
+def signature(messsage, secret)
+	Digest::HMAC.hexdigest(message, secret, Digest::SHA1)
+end```
+
 Example usage
 -------------
 
 Remote form code:  
-```	<form name="foo">
-		<input type="text" name="bar" />
-		<textarea name="baz"></textarea>
-		...
-	</form>
-```
+```<form name="foo">
+	<input type="text" name="bar" />
+	<textarea name="baz"></textarea>
+	...
+</form>```
+
 Request:  
-```	{
-		"foo" => {
-			"bar" => "value for bar text field",
-			"baz" => "value for baz textarea"
-		}
+```{
+	"foo" => {
+		"bar" => "value for bar text field",
+		"baz" => "value for baz textarea"
 	}
-```
+}```
 
 Bugs/ToDo
 ---------
