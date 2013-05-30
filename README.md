@@ -28,19 +28,19 @@ Example usage
 -------------
 
 Remote form code:
-	<form name="foo">
-		<input type="text" name="bar" />
-		<textarea name="baz"></textarea>
-		...
-	</form>
+	<form name="foo">  
+		<input type="text" name="bar" />  
+		<textarea name="baz"></textarea>  
+		...  
+	</form>  
 
 Request:
-	{
-		"foo" => {
-			"bar" => "value for bar text field",
-			"baz" => "value for baz textarea" 
-		}
-	}
+	{  
+		"foo" => {  
+			"bar" => "value for bar text field",  
+			"baz" => "value for baz textarea"  
+		}  
+	}  
 
 
 Bugs/ToDo
