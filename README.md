@@ -19,7 +19,7 @@ where $request is base64 encoded JSON:
 	}
 }
 ```
-and $signature is hexdigest HMAC-SHA1 of http://example.com/form#$request, example generating code in :
+and $signature is hexdigest HMAC-SHA1 of http://example.com/form#$request, sample generating code in ruby:
 ```ruby
 require 'digest'
 
